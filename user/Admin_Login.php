@@ -16,11 +16,8 @@ require('connection.php');
     <form action="Admin_Login.php" method="post">
     Admin Id : <input type="text" name="Adminid"> <br><br>
     Password : <input type="password" name ="password"><br><br>
-    <a href="#">Forgot Password ?</a>
-    <br><br>
-    <a href="#"> Create an Account</a>
-    <br><br>
-    <input type="submit" name="signin">
+  
+    <a href="display.php"><input type="submit" name="signin"></a>
    
     </form>
 
@@ -34,10 +31,10 @@ require('connection.php');
        if(mysqli_num_rows($res) == 1){
          session_start();
          $_SESSION['AdminLoginId'] = $_POST['Adminid'];
-         header("Location:Admin_Pannel.php");
+         header("Location:display.php");
        }
        else{
-        echo "<script>alert('incorrect');</script>";
+        echo "<script>alert('incorrect Id or Password');</script>";
        }
      }
     ?>

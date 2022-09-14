@@ -23,7 +23,7 @@ require("User_Connection.php");
 <table class="table">
   <thead>
     <tr>
-     
+    <th scope="col">Sr. no</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Date Of Birth</th>
@@ -40,21 +40,21 @@ require("User_Connection.php");
 
       if($result){
         while($row = mysqli_fetch_assoc($result)){
-       
+            $id = $row['id'];
             $First_Name = $row['First_Name'];
             $Last_Name = $row['Last_Name'];
             $DOB = $row['DOB'];
             $Email = $row['Email'];
 
             echo '<tr>
-
+      <td>'.$id.'</td>
       <td>'.$First_Name.'</td>
       <td>'.$Last_Name.'</td>
       <td>'.$DOB.'</td>
       <td>'.$Email.'</td>
       <td>
-        <button ><a href="" class="btn btn-success">Edit</a></button>
-        <button><a href="" class="btn btn-danger">Delete</a></button>
+        <button ><a href="update.php?updateid ='.$id.'" class="btn btn-success">Update</a></button>
+        <button><a href="delete.php?deleteid='.$id.' " class="btn btn-danger">Delete</a></button>
     </td>
    
 
