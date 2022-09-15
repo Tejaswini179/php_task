@@ -53,7 +53,7 @@ require("User_Connection.php");
       <td>'.$DOB.'</td>
       <td>'.$Email.'</td>
       <td>
-        <button ><a href="update.php?updateid ='.$id.'" class="btn btn-success">Update</a></button>
+        <button ><a href="update.php?editid='.$id.'" class="btn btn-success">Update</a></button>
         <button><a href="delete.php?deleteid='.$id.' " class="btn btn-danger">Delete</a></button>
     </td>
    
